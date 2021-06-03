@@ -27,7 +27,8 @@ const BarChart = () => {
     getTicketFrequency().then((result) => {
       initChart({ result });
     });
-  }, [filteredData]);
+    // eslint-disable-next-line
+  }, []);
 
   const chartData = {
     labels: assignees,
