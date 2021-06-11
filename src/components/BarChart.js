@@ -28,7 +28,7 @@ const BarChart = () => {
       initChart({ result });
     });
     // eslint-disable-next-line
-  }, []);
+  }, [filteredData]);
 
   const chartData = {
     labels: assignees,
