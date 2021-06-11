@@ -31,7 +31,7 @@ const FormControlComponent = ({ filterArr, filter, handleChange, label }) => {
         value={filter}
         onChange={handleStatusChange}
       >
-        <MenuItem value="Select" id={0}>
+        <MenuItem value="" id={0}>
           Select
         </MenuItem>
         {filterArr.map((result) => (

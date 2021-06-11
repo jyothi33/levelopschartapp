@@ -39,16 +39,21 @@ export const ChartProvider = (props) => {
         let issuetype = action.issuetype;
         let priority = action.priority;
 
-        let filtered = state.initdata.filter(
-          (ticket) =>
-            ticket.status === status ||
-            ticket.issue_type === issuetype ||
-            ticket.priority === priority
+        let filterStatus = state.initdata.filter((ticket) =>
+          status ? ticket.status === status : "true"
+        );
+
+        let filterIssue = filterStatus.filter((ticket) =>
+          issuetype ? ticket.issue_type === issuetype : "true"
+        );
+
+        let filterPriority = filterIssue.filter((ticket) =>
+          priority ? ticket.priority === priority : "true"
         );
 
         return {
           ...state,
-          filteredData: filtered,
+          filteredData: filterPriority,
         };
 
       default:
